@@ -134,7 +134,7 @@ export default function Header(props) {
     { name: "Media", link: "/media" },
     { name: "Photos", link: "/photos" },
     { name: "Videos", link: "/videos" },
-    { name: "Socialmedia", link: "/socialmedia" },
+    { name: "Audio", link: "/audio" },
   ];
 
   // const routes = [
@@ -153,13 +153,13 @@ export default function Header(props) {
         }
         break;
 
-      case "/aboutus":
+      case "/about":
         if (value !== 1) {
           setValue(1);
         }
         break;
 
-      case "/products":
+      case "/projects":
         if (value !== 2) {
           setValue(2);
         }
@@ -185,14 +185,14 @@ export default function Header(props) {
         }
         break;
 
-      case "/socialmedia":
+      case "/audio":
         if (value !== 6) {
           setValue(3);
           setSelectedIndex(3);
         }
         break;
 
-      case "/contactus":
+      case "/contact":
         if (value !== 7) {
           setValue(4);
         }
@@ -240,14 +240,14 @@ export default function Header(props) {
         <Tab
           className={classes.tab}
           component={Link}
-          to="/aboutus"
-          label="About Us"
+          to="/about"
+          label="About"
         />
         <Tab
           className={classes.tab}
           component={Link}
-          to="/products"
-          label="Products"
+          to="/projects"
+          label="Projects"
         />
         <Tab
           aria-owns={anchorEl ? "simple-menu" : undefined}
@@ -264,8 +264,8 @@ export default function Header(props) {
             marginRight: "30px",
           }}
           component={Link}
-          to="/contactus"
-          label="Contact Us"
+          to="/contact"
+          label="Contact"
         />
       </Tabs>
       {/* <Button
@@ -342,12 +342,12 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            to="/aboutus"
+            to="/about"
             selected={value === 1}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              About Us
+              About
             </ListItemText>
           </ListItem>
           <ListItem
@@ -357,12 +357,12 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            to="/products"
+            to="/projects"
             selected={value === 2}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              Products
+              Projects
             </ListItemText>
           </ListItem>
           <ListItem
@@ -387,15 +387,15 @@ export default function Header(props) {
             }}
             button
             component={Link}
-            to="/contactus"
+            to="/contact"
             selected={value === 4}
             classes={{ selected: classes.drawerItemSelected }}
           >
             <ListItemText className={classes.drawerItem} disableTypography>
-              Contact Us
+              Contact
             </ListItemText>
           </ListItem>
-          <ListItem
+          {/* <ListItem
             className={classes.drawerItemEstimate}
             onClick={() => {
               setOpenDrawer(false);
@@ -413,7 +413,7 @@ export default function Header(props) {
             <ListItemText className={classes.drawerItem} disableTypography>
               Free Estimate
             </ListItemText>
-          </ListItem>
+          </ListItem> */}
         </List>
       </SwipeableDrawer>
       <IconButton

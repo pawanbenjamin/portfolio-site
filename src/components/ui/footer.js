@@ -70,12 +70,12 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
-                to="/aboutus"
+                to="/about"
                 item
                 className={classes.link}
                 onClick={() => setValue(1)}
               >
-                About Us
+                About
               </Grid>
             </Grid>
           </Grid>
@@ -83,12 +83,12 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
-                to="/products"
+                to="/projects"
                 item
                 className={classes.link}
                 onClick={() => setValue(2)}
               >
-                Products
+                Projects
               </Grid>
             </Grid>
           </Grid>
@@ -136,12 +136,12 @@ export default function Footer(props) {
             <Grid container direction="column">
               <Grid
                 component={Link}
-                to="/contactus"
+                to="/contact"
                 item
                 className={classes.link}
                 onClick={() => setValue(4)}
               >
-                Contact Us
+                Contact
               </Grid>
             </Grid>
           </Grid>
