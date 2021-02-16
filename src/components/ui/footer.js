@@ -8,7 +8,7 @@ import swirl from "../../assets/swirl.svg";
 
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.orange,
+    backgroundColor: theme.palette.common.blue,
     width: "100%",
     height: "5em",
     [theme.breakpoints.down("sm")]: {
@@ -129,6 +129,18 @@ export default function Footer(props) {
                 }}
               >
                 Videos
+              </Grid>
+              <Grid
+                component={Link}
+                to="/audio"
+                item
+                className={classes.link}
+                onClick={() => {
+                  setValue(3);
+                  setSelectedIndex(3);
+                }}
+              >
+                Audio
               </Grid>
             </Grid>
           </Grid>
