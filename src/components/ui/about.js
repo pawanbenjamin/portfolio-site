@@ -26,6 +26,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "4em",
     width: "33em",
     textAlign: "center",
+    [theme.breakpoints.down("md")]: {
+      width: "20em",
+    },
   },
   descrip: {
     width: "60em",
