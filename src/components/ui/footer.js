@@ -4,7 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
 
-import swirl from "../../assets/swirl.svg";
+
 
 const useStyles = makeStyles((theme) => ({
   footer: {
@@ -37,6 +37,15 @@ const useStyles = makeStyles((theme) => ({
     opacity: ".7",
     textDecoration: "none",
     color: "black",
+  },
+  iconContainer: {
+    marginLeft: "2em",
+    marginTop: "1.5em",
+    opacity: ".5",
+    justifyContent: "flex-start",
+  },
+  icon: {
+    marginRight: "6px",
   },
 }));
 
@@ -159,6 +168,45 @@ export default function Footer(props) {
           </Grid>
         </Grid>
       </Hidden>
+      {/* <Grid container direction="column">
+        <Grid
+          container
+          direction="row"
+          justify="left"
+          className={classes.iconContainer}
+        >
+          <Grid
+            item
+            component={"a"}
+            href={"https://www.facebook.com/pawan.benjamin"}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={classes.icon}
+          >
+            <img src={fbook}></img>
+          </Grid>
+          <Grid
+            item
+            component={"a"}
+            href={"https://www.instagram.com/pawanbenjamin/?hl=en"}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={classes.icon}
+          >
+            <img src={ig}></img>
+          </Grid>
+          <Grid
+            item
+            component={"a"}
+            href={"https://twitter.com/PawanBenjamin"}
+            rel="noopener noreferrer"
+            target="_blank"
+            className={classes.icon}
+          >
+            <img src={twitter}></img>
+          </Grid>
+        </Grid>
+      </Grid> */}
       {/* <img alt="logo" src={swirl} className={classes.footerLogo} /> */}
     </footer>
   );

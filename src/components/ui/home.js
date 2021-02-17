@@ -17,7 +17,12 @@ const useStyles = makeStyles((theme) => ({
     // backgroundSize: "600px 800px",
   },
   block1: {
-    marginTop: "30px",
+    marginTop: "4em",
+
+    [theme.breakpoints.down("md")]: {
+      marginTop: "2em",
+    },
+
     justifyContent: "space-evenly",
   },
   img: {
@@ -30,6 +35,7 @@ const useStyles = makeStyles((theme) => ({
   intro: {
     marginLeft: "2em",
     width: "20em",
+    marginBotton: "3em",
   },
   button: {
     marginTop: "2em",
@@ -38,6 +44,13 @@ const useStyles = makeStyles((theme) => ({
     marginBottom: "2em",
   },
   mainImg: {},
+  title: {
+    marginTop: "2em",
+    ...theme.typography.tab,
+    display: "flex",
+    justifyContent: "center",
+    marginBottom: "2em",
+  },
 }));
 
 const Home = () => {
@@ -48,10 +61,16 @@ const Home = () => {
       <Grid container>
         <Grid container className={classes.block1} justify="row">
           <Grid item>
+            <Typorgraphy className={classes.title}>
+              Welcome to my portfolio Page!{" "}
+            </Typorgraphy>
             <Typorgraphy className={classes.intro}>
-              Welcome to my portfolio Page! Links to not only technical projects
-              put music and recordings as well. Write a little more about myself
-              and my journey into code
+              Here you will find a directory to my engineering projects, as well
+              as links and media from my musical career. Thank you for stopping
+              by!
+            </Typorgraphy>
+            <Typorgraphy className={classes.title}>
+              Click below to view recent projects
             </Typorgraphy>
             <Grid className={classes.button} item>
               <Button
@@ -63,6 +82,9 @@ const Home = () => {
                 Technical Projects
               </Button>
             </Grid>
+            <Typorgraphy className={classes.title}>
+              Click here to listen to my music
+            </Typorgraphy>
             <Grid item className={classes.button}>
               <Button
                 variant="contained"
@@ -92,9 +114,13 @@ const Home = () => {
       <Grid container>
         <Grid container className={classes.block1} justify="row">
           <Grid item>
-            <Typorgraphy>
-              As always, the portfolio is always growing. Please check back for
-              more new coding projects
+            <Typorgraphy
+              style={{
+                marginTop: "8em",
+                marginBottom: "4em",
+              }}
+            >
+              Please check back for new projects!
             </Typorgraphy>
           </Grid>
         </Grid>

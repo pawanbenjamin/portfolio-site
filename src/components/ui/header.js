@@ -19,6 +19,7 @@ import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
 import swirl from "../../assets/swirl.svg";
+import { Typography } from "@material-ui/core";
 
 function ElevationScroll(props) {
   const { children } = props;
@@ -114,6 +115,11 @@ const useStyles = makeStyles((theme) => ({
   },
   appBar: {
     zIndex: theme.zIndex.modal + 1,
+  },
+  name: {
+    marginLeft: "2em",
+    ...theme.typography.tab,
+    opacity: ".7",
   },
 }));
 
@@ -431,19 +437,15 @@ export default function Header(props) {
       <ElevationScroll>
         <AppBar className={classes.appBar} position="fixed" color="primary">
           <Toolbar disableGutters>
-            {/* <Button
+            <Button
               component={Link}
               to="/"
               disableRipple
               className={classes.logoContainer}
               onClick={() => setValue(0)}
             >
-              <img
-                alt="company-logo"
-                src={swirl}
-                className={classes.logo}
-              ></img>
-            </Button> */}
+              <Typography className={classes.name}>Pawan Benjamin</Typography>
+            </Button>
             {matches ? drawer : tabs}
           </Toolbar>
         </AppBar>

@@ -1,8 +1,9 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
-import Typorgraphy from "@material-ui/core/Typography";
+import Typography from "@material-ui/core/Typography";
 import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
+
 const useStyles = makeStyles((theme) => ({}));
 
 const Videos = () => {
@@ -10,7 +11,14 @@ const Videos = () => {
 
   return (
     <Grid container justify="column">
-      <Grid container>
+      <Typography
+        style={{
+          alignItems: "center",
+        }}
+      >
+        Coming Soon!
+      </Typography>
+      {/* <Grid container>
         <Grid container justify="row">
           <Grid item>
             <Typorgraphy>...1</Typorgraphy>
@@ -57,7 +65,7 @@ const Videos = () => {
             <img src={swirl}></img>
           </Grid>
         </Grid>
-      </Grid>
+      </Grid> */}
     </Grid>
   );
 };
