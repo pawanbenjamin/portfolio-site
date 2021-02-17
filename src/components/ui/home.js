@@ -28,6 +28,7 @@ const useStyles = makeStyles((theme) => ({
   img: {
     height: "500px",
     borderRadius: "5px",
+    boxShadow: "0 3px 6px",
     [theme.breakpoints.down("xs")]: {
       height: "248px",
     },
@@ -100,6 +101,8 @@ const Home = () => {
             <img src={Pawan37} className={classes.img}></img>
             <Typorgraphy
               style={{
+                fontSize: "12px",
+                marginTop: "1em",
                 textAlign: "center",
               }}
             >

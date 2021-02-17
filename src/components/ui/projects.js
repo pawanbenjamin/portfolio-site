@@ -67,12 +67,12 @@ const Projects = () => {
   const [projects, setProjects] = useState([
     {
       name: `Sita's Kitchen`,
-      description: `An e-commerce site where users can browse items (Nepali sauces), add to cart and checkout. Implemented RESTful API endpoints to create, edit, and delete items as an admin user `,
+      description: `An e-commerce site where users can browse items (Nepali sauces), add to cart and checkout. \n Implemented RESTful API endpoints to create, edit, and delete items as an admin user `,
       url: "https://github.com/pawanbenjamin/sitas-kitchen",
     },
     {
       name: `ByteDance Revolution`,
-      description: `Used Tensorflow.js machine learning library and posenet to track user movements and calculate exact position  scores
+      description: `Used Tensorflow.js machine learning library and posenet to track user movements and calculate exact position scores. \n
         Used Firebase to store user data, media, authentication and deployment in an agile development environment
         `,
       url:
@@ -80,7 +80,7 @@ const Projects = () => {
     },
     {
       name: `React Synth`,
-      description: `A project that integrates React and the WebAudio Api's Oscillator nodes in particular, which can be controlled with user input.`,
+      description: `A project that integrates React and the WebAudio Api's Oscillator nodes, which can be controlled with the user's keyboard.`,
       url: "https://github.com/pawanbenjamin/react-synth",
     },
   ]);

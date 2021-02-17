@@ -21,6 +21,7 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "2em",
     height: "500px",
     borderRadius: "5px",
+    boxShadow: "0 3px 6px",
   },
   textBlock: {
     marginTop: "4em",
@@ -34,6 +35,9 @@ const useStyles = makeStyles((theme) => ({
     width: "60em",
     textAlign: "center",
     marginBottom: "2em",
+    [theme.breakpoints.down("md")]: {
+      width: "20em",
+    },
   },
   shyam: {
     marginTop: "2em",
@@ -43,6 +47,14 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.tab,
     marginBottom: "2em",
     textAlign: "center",
+  },
+  lpr: {
+    marginBottom: "6em",
+    height: "500px",
+    boxShadow: "0 3px 6px",
+    [theme.breakpoints.down("md")]: {
+      height: "15em",
+    },
   },
 }));
 
@@ -114,13 +126,7 @@ const About = () => {
         <Grid className={classes.block1} container justify="row">
           <Grid item></Grid>
           <Grid item>
-            <img
-              src={wShyamDai}
-              style={{
-                marginBottom: "6em",
-                height: "500px",
-              }}
-            ></img>
+            <img src={wShyamDai} className={classes.lpr}></img>
           </Grid>
           <Grid item></Grid>
         </Grid>
