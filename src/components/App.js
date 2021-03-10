@@ -48,12 +48,12 @@ function App() {
           />
         </Switch>
       </AnimatePresence>
-      <Footer
+      {/* <Footer
         value={value}
         setValue={setValue}
         selectedIndex={selectedIndex}
         setSelectedIndex={setSelectedIndex}
-      />
+      /> */}
     </ThemeProvider>
   );
 }

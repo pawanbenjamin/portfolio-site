@@ -5,7 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: grey;
+  background-color: rgb(189, 187, 187);
 }
 
 code {
@@ -14,7 +14,37 @@ code {
 }
 
 .item1 {
+  display: flex;
+  justify-content: center;
   background-color: aquamarine;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+.about2 {
+  display: flex;
+  justify-content: center;
+  background-color: aquamarine;
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+.about1 {
+  display: flex;
+  justify-content: center;
+  background-color: rgb(120, 60, 199);
+  height: 100vh;
+  width: 100vw;
+  scroll-snap-align: start;
+}
+
+.about3 {
+  display: flex;
+  justify-content: center;
+  /* margin-left: -10em; */
+
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
@@ -24,24 +54,26 @@ code {
   background-image: url("./assets/PawanBnW.jpg");
 }
 
-.home2 {
-  background-image: url("./assets/Shehnai.jpg");
-}
-
-.item2 {
-  background-color: azure;
+.item2home {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
 }
 
 .item3 {
+  display: flex;
+  justify-content: center;
   background-color: rebeccapurple;
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;
 }
 .item4 {
+  display: flex;
+  justify-content: center;
   background-color: rosybrown;
   height: 100vh;
   width: 100vw;

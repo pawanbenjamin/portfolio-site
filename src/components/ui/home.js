@@ -8,6 +8,9 @@ import soloShen from "../../assets/soloShen.jpg";
 import Pawan37 from "../../assets/Pawan37.jpg";
 import Button from "@material-ui/core/Button";
 
+import BWLouie from "../../assets/BWLouie.jpeg";
+import parchement from "../../assets/parchment.jpg";
+
 import { motion } from "framer-motion";
 
 import { makeStyles } from "@material-ui/core/styles";
@@ -16,14 +19,27 @@ import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   block1: {
-    display: "inline-block",
-    margin: "10em",
+    marginTop: "10em",
+    alignItems: "left",
     width: "35em",
+  },
+  block2: {
+    alignItems: "left",
+    width: "25em",
   },
   button: {
     marginTop: "3em",
     margin: "2em",
     borderRadius: "10em",
+  },
+  photo: {
+    marginTop: "10em",
+    marginRight: "3em",
+  },
+  column1: {
+    marginLeft: "8em",
+    marginTop: "14em",
+    marginRight: "3em",
   },
 }));
 
@@ -34,7 +50,7 @@ const container = {
   visible: {
     opacity: 1,
     transition: {
-      duration: 1,
+      duration: 2,
     },
   },
   exit: {
@@ -92,7 +108,7 @@ const Home = ({ setValue, setSelectedIndex }) => {
       <div className="item1 home1">
         <div className={classes.block1}>
           <Typography variant="h2">
-            Hi, I'm Pawan <br />
+            Hi, I'm Pawan. <br />
             Software Engineer <br />
             Musician & Educator
           </Typography>
@@ -123,10 +139,19 @@ const Home = ({ setValue, setSelectedIndex }) => {
             Music / Art
           </Button>
         </div>
+        <div className={classes.block2}></div>
       </div>
-      <div className="item2 home2"></div>
-      <div className="item3 home3"></div>
-      <div className="item4 home4"></div>
+      <div className="item2home">
+        <img style={{ marginLeft: "0" }} src={BWLouie} />
+        <div className={classes.column1}>
+          <Typography variant="h2">
+            I am a <br />
+            creativite mind <br />
+            with a passion for <br />
+            tehcnology, sound, art and people.
+          </Typography>
+        </div>
+      </div>
     </motion.div>
   );
 };

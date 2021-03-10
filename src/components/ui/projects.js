@@ -6,6 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import Hidden from "@material-ui/core/Hidden";
 import swirl from "../../assets/swirl.svg";
 
+import { motion } from "framer-motion";
 // const projectsArr = [
 //   {
 //     name: `Sita's Kitchen`,
@@ -23,22 +24,33 @@ import swirl from "../../assets/swirl.svg";
 //   },
 // ];
 
-const useStyles = makeStyles((theme) => ({
-  title: {
-    alignItems: "center",
-    marginBottom: "0",
+const page = {
+  hidden: {
+    opacity: 0,
   },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: {
+      duration: 2,
+    },
+  },
+};
+
+const useStyles = makeStyles((theme) => ({
   bigRow: {
     alignItems: "center",
-    textAlign: "center",
-    marginBottom: "6em",
+    justifyContent: "space-around",
   },
   row: {
-    marginTop: "2em",
     textDecoration: "none",
     color: "black",
-    justifyContent: "center",
-    padding: "20px",
+    marginRight: "2em",
     [theme.breakpoints.down("xs")]: {},
   },
   cardTitle: {
@@ -54,10 +66,8 @@ const useStyles = makeStyles((theme) => ({
       width: "20em",
     },
   },
-  title: {
-    marginTop: "2em",
-    textAlign: "center",
-    ...theme.typography.tab,
+  projectContainer: {
+    marginRight: "2em",
   },
 }));
 
@@ -90,44 +100,55 @@ const Projects = () => {
   }, []);
 
   return (
-    <>
-      <Typorgraphy className={classes.title}>
-        Click on each project to go to the Github Page!
-      </Typorgraphy>
-      <Grid container className={classes.bigRow} justify="column">
-        {projects.map((project) => (
-          <>
-            <Grid
-              component={"a"}
-              href={project.url}
-              rel="noopener noreferrer"
-              target="_blank"
-              className={classes.row}
-              container
-              justify="row"
-            >
-              <Grid item>
-                <GitHubIcon
-                  style={{
-                    marginTop: "20px",
-                    marginRight: "30px",
-                  }}
-                />
+    <motion.div
+      variants={page}
+      initial="hidden"
+      animate="visible"
+      exit="exit
+    "
+      className="item1"
+    >
+      <Grid container className={classes.bigRow} justify="row">
+        <Typorgraphy variant="h2" className={classes.title}>
+          Click on each <br />
+          project to go to the <br />
+          Github Page!
+        </Typorgraphy>
+        <div className={classes.projectContainer} justify="column">
+          {projects.map((project) => (
+            <>
+              <Grid
+                component={"a"}
+                href={project.url}
+                rel="noopener noreferrer"
+                target="_blank"
+                className={classes.row}
+                container
+                justify="row"
+              >
+                <Grid item>
+                  <Grid item>
+                    <GitHubIcon
+                      style={{
+                        marginTop: "20px",
+                        marginRight: "30px",
+                      }}
+                    />
+                  </Grid>
+                  <Typorgraphy className={classes.cardTitle}>
+                    {project.name}
+                  </Typorgraphy>
+                  <Typorgraphy className={classes.description}>
+                    {project.description}
+                  </Typorgraphy>
+                </Grid>
               </Grid>
-              <Grid item>
-                <Typorgraphy className={classes.cardTitle}>
-                  {project.name}
-                </Typorgraphy>
-                <Typorgraphy className={classes.description}>
-                  {project.description}
-                </Typorgraphy>
-              </Grid>
-            </Grid>
-            <Grid item></Grid>
-          </>
-        ))}
+              <Grid item></Grid>
+            </>
+          ))}
+        </div>
       </Grid>
-    </>
+    </motion.div>
   );
 };
 

@@ -5,58 +5,19 @@ import { motion } from "framer-motion";
 import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import redSax from "../../assets/redSax.jpg";
-import withReggieBansuri from "../../assets/withReggieBansuri.jpg";
+
+import ctrib from "../../assets/ColtraneTrib.jpeg";
 import wShyamDai from "../../assets/wShyamDai.jpg";
 import LinkIcon from "@material-ui/icons/Link";
+import Typography from "@material-ui/core/Typography";
 
 const useStyles = makeStyles((theme) => ({
-  bigRow: {
-    // backgroundColor: "#EFF9F0",
-    // backgroundSize: "600px 800px",
-    scrollSnapType: "y mandatory",
+  engineerBlock: {
+    marginTop: "15em",
   },
-  block1: {
-    marginTop: "2em",
-    justifyContent: "space-evenly",
-  },
-  img: {
-    marginTop: "2em",
-    height: "500px",
-    borderRadius: "5px",
-    boxShadow: "0 3px 6px",
-  },
-  textBlock: {
-    marginTop: "4em",
-    width: "33em",
-    textAlign: "center",
-    [theme.breakpoints.down("md")]: {
-      width: "20em",
-    },
-  },
-  descrip: {
-    width: "60em",
-    textAlign: "center",
-    marginBottom: "2em",
-    [theme.breakpoints.down("md")]: {
-      width: "20em",
-    },
-  },
-  shyam: {
-    marginTop: "2em",
-    textAlign: "center",
-  },
-  title: {
-    ...theme.typography.tab,
-    marginBottom: "2em",
-    textAlign: "center",
-  },
-  lpr: {
-    marginBottom: "6em",
-    height: "500px",
-    boxShadow: "0 3px 6px",
-    [theme.breakpoints.down("md")]: {
-      height: "15em",
-    },
+  skillsBlock: {
+    marginTop: "15em",
+    marginLeft: "4em",
   },
 }));
 
@@ -93,6 +54,25 @@ const redSaxy = {
   },
 };
 
+const aboutPage = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+    },
+  },
+  exit: {
+    x: "100vw",
+    transition: {
+      ease: "easeInOut",
+      duration: 2,
+    },
+  },
+};
+
 const About = () => {
   const classes = useStyles();
 
@@ -101,12 +81,51 @@ const About = () => {
   }, []);
 
   return (
-    <div className="container">
-      <div className="item1"></div>
-      <div className="item2"></div>
-      <div className="item3"></div>
-      <div className="item4"></div>
-    </div>
+    <motion.div
+      variants={aboutPage}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+      className="container"
+    >
+      <div className="about2">
+        <Typography className={classes.engineerBlock}>
+          <Typography variant="h3">As an Engineer</Typography>
+          Blah Blah Blah Blah
+          <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+        </Typography>
+        <Typography className={classes.skillsBlock}>
+          <Typography variant="h3">Skills:</Typography>
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+        </Typography>
+      </div>
+      <div className="about1">
+        <Typography className={classes.engineerBlock}>
+          <Typography variant="h3">As a Musician</Typography>
+          Blah Blah Blah Blah
+          <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+        </Typography>
+        <Typography className={classes.skillsBlock}>
+          <Typography variant="h3">Awards and Honors Include:</Typography>
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+          Blah Blah Blah Blah <br />
+        </Typography>
+      </div>
+      <div className="about3"></div>
+    </motion.div>
   );
 };
 

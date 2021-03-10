@@ -6,6 +6,8 @@ import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 
+import BrushIcon from "@material-ui/icons/Brush";
+
 const useStyles = makeStyles((theme) => ({
   bigRow: {
     // backgroundColor: "#EFF9F0",
@@ -14,7 +16,11 @@ const useStyles = makeStyles((theme) => ({
   },
   block1: {
     marginTop: "20em",
-    justifyContent: "space-evenly",
+    justifyContent: "center",
+  },
+  button: {
+    borderRadius: "10em",
+    margin: "2em",
   },
 }));
 
@@ -27,41 +33,39 @@ const Media = () => {
 
   return (
     <Grid container className={classes.bigRow} justify="column">
-      <Grid container>
-        <Grid className={classes.block1} container justify="row">
-          <Grid item>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              component={Link}
-              to="/photos"
-            >
-              To Photos
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              component={Link}
-              to="/videos"
-            >
-              To Videos
-            </Button>
-          </Grid>
-          <Grid item>
-            <Button
-              variant="contained"
-              color="secondary"
-              className={classes.button}
-              component={Link}
-              to="/audio"
-            >
-              To Audio
-            </Button>
-          </Grid>
+      <Grid className={classes.block1} container justify="row">
+        <Grid item>
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            component={Link}
+            to="/visualart"
+          >
+            Visual Art
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            component={Link}
+            to="/videos"
+          >
+            Videos
+          </Button>
+        </Grid>
+        <Grid item>
+          <Button
+            variant="contained"
+            color="secondary"
+            className={classes.button}
+            component={Link}
+            to="/audio"
+          >
+            Audio
+          </Button>
         </Grid>
       </Grid>
     </Grid>
