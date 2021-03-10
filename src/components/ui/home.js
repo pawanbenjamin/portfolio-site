@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Typorgraphy from "@material-ui/core/Typography";
+
 import PawanBnW from "../../assets/PawanBnW.jpg";
 import soprano from "../../assets/soprano.jpg";
 import swirl from "../../assets/swirl.svg";
@@ -9,126 +8,95 @@ import soloShen from "../../assets/soloShen.jpg";
 import Pawan37 from "../../assets/Pawan37.jpg";
 import Button from "@material-ui/core/Button";
 
+import { motion } from "framer-motion";
+
 import { makeStyles } from "@material-ui/core/styles";
-import { findByLabelText } from "@testing-library/react";
-const useStyles = makeStyles((theme) => ({
-  bigRow: {
-    backgroundColor: "#EFF9F0",
-    // backgroundSize: "600px 800px",
-  },
-  block1: {
-    marginTop: "4em",
+import Typography from "@material-ui/core/Typography";
 
-    [theme.breakpoints.down("md")]: {
-      marginTop: "2em",
-    },
+const useStyles = makeStyles((theme) => ({}));
 
-    justifyContent: "space-evenly",
+const container = {
+  hidden: {
+    opacity: 0,
   },
-  img: {
-    height: "500px",
-    borderRadius: "5px",
-    boxShadow: "0 3px 6px",
-    [theme.breakpoints.down("xs")]: {
-      height: "248px",
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 1,
     },
   },
-  intro: {
-    marginLeft: "2em",
-    width: "20em",
-    marginBotton: "3em",
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+      duration: 2,
+    },
   },
-  button: {
-    marginTop: "2em",
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "2em",
-  },
-  mainImg: {},
-  title: {
-    marginTop: "2em",
-    ...theme.typography.tab,
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "2em",
-  },
-}));
+};
 
-const Home = () => {
-  const classes = useStyles();
+const imageVar = {
+  hidden: {
+    opacity: 0,
+    x: "100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 3,
+    },
+  },
+};
+
+const textVar = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 3,
+    },
+  },
+};
+
+const Home = ({ setValue, setSelectedIndex }) => {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
-    <Grid className={classes.bigRow} container justify="column">
-      <Grid container>
-        <Grid container className={classes.block1} justify="row">
-          <Grid item>
-            <Typorgraphy className={classes.title}>
-              Welcome to my portfolio Page!{" "}
-            </Typorgraphy>
-            <Typorgraphy className={classes.intro}>
-              Here you will find a directory to my engineering projects, as well
-              as links and media from my musical career. Thank you for stopping
-              by!
-            </Typorgraphy>
-            <Typorgraphy className={classes.title}>
-              Click below to view recent projects
-            </Typorgraphy>
-            <Grid className={classes.button} item>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/projects"
-              >
-                Technical Projects
-              </Button>
-            </Grid>
-            <Typorgraphy className={classes.title}>
-              Click here to listen to my music
-            </Typorgraphy>
-            <Grid item className={classes.button}>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/audio"
-              >
-                Music
-              </Button>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <img src={Pawan37} className={classes.img}></img>
-            <Typorgraphy
-              style={{
-                fontSize: "12px",
-                marginTop: "1em",
-                textAlign: "center",
-              }}
-            >
-              At the UW Memorial Union Theatre Oct 2019
-            </Typorgraphy>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid container className={classes.block1} justify="row"></Grid>
-      </Grid>
-      <Grid container>
-        <Grid container className={classes.block1} justify="row">
-          <Grid item>
-            <Typorgraphy
-              style={{
-                marginTop: "8em",
-                marginBottom: "4em",
-              }}
-            >
-              Please check back for new projects!
-            </Typorgraphy>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
+    <motion.div
+      className="container"
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <div className="item1 home1">
+        <Typography variant="h2">Welcome to My Portfolio Page!</Typography>
+        <Button
+          variant="contained"
+          color="secondary"
+          component={Link}
+          to="/projects"
+          onClick={() => {
+            setValue(1);
+            setSelectedIndex(1);
+          }}
+        >
+          Technical Projects
+        </Button>
+        <Link to="/media">
+          <button>Music/Art</button>
+        </Link>
+      </div>
+      <div className="item2 home2"></div>
+      <div className="item3 home3"></div>
+      <div className="item4 home4"></div>
+    </motion.div>
   );
 };
 

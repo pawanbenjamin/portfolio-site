@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { ThemeProvider } from "@material-ui/styles";
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { Route, Switch, useLocation } from "react-router-dom";
 import Header from "./ui/header";
 import Footer from "./ui/footer";
 import theme from "./ui/theme";
@@ -14,20 +14,23 @@ import Media from "./ui/media";
 import Contact from "./ui/contact";
 import Videos from "./ui/videos";
 
+import { AnimatePresence } from "framer-motion";
+
 function App() {
+  const location = useLocation();
   const [selectedIndex, setSelectedIndex] = useState(0);
   const [value, setValue] = useState(0);
 
   return (
     <ThemeProvider theme={theme}>
-      <BrowserRouter>
-        <Header
-          value={value}
-          setValue={setValue}
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-        />
-        <Switch>
+      <Header
+        value={value}
+        setValue={setValue}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
+      />
+      <AnimatePresence exitBeforeEnter>
+        <Switch location={location} key={location.key}>
           <Route exact path="/" component={Home} />
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
@@ -42,13 +45,13 @@ function App() {
             component={() => <div>Free Estimate</div>}
           />
         </Switch>
-        <Footer
-          value={value}
-          setValue={setValue}
-          selectedIndex={selectedIndex}
-          setSelectedIndex={setSelectedIndex}
-        />
-      </BrowserRouter>
+      </AnimatePresence>
+      <Footer
+        value={value}
+        setValue={setValue}
+        selectedIndex={selectedIndex}
+        setSelectedIndex={setSelectedIndex}
+      />
     </ThemeProvider>
   );
 }

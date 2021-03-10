@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typorgraphy from "@material-ui/core/Typography";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -84,6 +84,10 @@ const Projects = () => {
       url: "https://github.com/pawanbenjamin/react-synth",
     },
   ]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
 
   return (
     <>

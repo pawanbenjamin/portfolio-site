@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Typorgraphy from "@material-ui/core/Typography";
@@ -8,7 +8,7 @@ import Button from "@material-ui/core/Button";
 
 const useStyles = makeStyles((theme) => ({
   bigRow: {
-    backgroundColor: "#EFF9F0",
+    // backgroundColor: "#EFF9F0",
     // backgroundSize: "600px 800px",
     height: "580px",
   },
@@ -21,6 +21,9 @@ const useStyles = makeStyles((theme) => ({
 const Media = () => {
   const classes = useStyles();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <Grid container className={classes.bigRow} justify="column">
       <Grid container>

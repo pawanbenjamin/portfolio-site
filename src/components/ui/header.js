@@ -18,46 +18,18 @@ import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
 
-import swirl from "../../assets/swirl.svg";
+import { motion } from "framer-motion";
+
+import PawanBnW from "../../assets/PawanBnW.jpg";
+
+import PBlogo from "../../assets/PBlogo.svg";
 import { Typography } from "@material-ui/core";
-
-function ElevationScroll(props) {
-  const { children } = props;
-
-  const trigger = useScrollTrigger({
-    disableHysteresis: true,
-    threshold: 0,
-  });
-
-  return React.cloneElement(children, {
-    elevation: trigger ? 4 : 0,
-  });
-}
 
 const useStyles = makeStyles((theme) => ({
   toolbarMargin: {
     ...theme.mixins.toolbar,
-    // marginBottom: "3em",
-    // [theme.breakpoints.down("sm")]: {
-    //   marginBottom: "3em",
-    // },
     [theme.breakpoints.down("xs")]: {
       marginBottom: ".5em",
-    },
-  },
-  logo: {
-    // height: "8em",
-    // [theme.breakpoints.down("sm")]: {
-    //   height: "8em",
-    // },
-    // [theme.breakpoints.down("xs")]: {
-    //   height: "5em",
-    // },
-  },
-  logoContainer: {
-    padding: 0,
-    "&:hover": {
-      backgroundColor: "transparent",
     },
   },
   tabContainer: {
@@ -79,6 +51,17 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: theme.palette.common.blue,
     color: "white",
   },
+  logo: {
+    marginLeft: "1.2em",
+    ...theme.typography.tab,
+    opacity: 0.7,
+    "&:hover": {
+      opacity: 1,
+    },
+    [theme.breakpoints.down("sm")]: {
+      opacity: "0",
+    },
+  },
   menuItem: {
     ...theme.typography.tab,
     opacity: 0.7,
@@ -87,7 +70,7 @@ const useStyles = makeStyles((theme) => ({
     },
   },
   drawer: {
-    backgroundColor: theme.palette.common.blue,
+    backgroundImage: `url(${PawanBnW})`,
     "& .MuiListIetmText-root": {
       opacity: 1,
     },
@@ -106,14 +89,12 @@ const useStyles = makeStyles((theme) => ({
     ...theme.typography.tab,
     opacity: 0.7,
   },
-  drawerItemEstimate: {
-    backgroundColor: theme.palette.common.orange,
-    borderRadius: "30px",
-  },
   drawerItemSelected: {
     opacity: 1,
   },
   appBar: {
+    boxShadow: "none",
+    backgroundColor: "transparent",
     zIndex: theme.zIndex.modal + 1,
   },
   name: {
@@ -122,6 +103,36 @@ const useStyles = makeStyles((theme) => ({
     opacity: ".7",
   },
 }));
+
+const svgVariants = {
+  hidden: {
+    opactiy: 0.7,
+    rotate: -180,
+  },
+  visible: {
+    opactiy: 0.7,
+    rotate: 0,
+    scale: 1.3,
+    transition: {
+      duration: 4,
+    },
+  },
+};
+
+const pathVariants = {
+  hidden: {
+    opacity: 0,
+    pathLength: 0,
+  },
+  visible: {
+    opacity: 1,
+    pathLength: 1,
+    transition: {
+      duration: 4,
+      ease: "easeInOut",
+    },
+  },
+};
 
 export default function Header(props) {
   const { value, setValue, selectedIndex, setSelectedIndex } = props;
@@ -401,25 +412,6 @@ export default function Header(props) {
               Contact
             </ListItemText>
           </ListItem>
-          {/* <ListItem
-            className={classes.drawerItemEstimate}
-            onClick={() => {
-              setOpenDrawer(false);
-              setValue(5);
-            }}
-            button
-            component={Link}
-            to="/estimate"
-            selected={value === 5}
-            classes={{
-              root: classes.drawerItemSelected,
-              selected: classes.drawerItemSelected,
-            }}
-          >
-            <ListItemText className={classes.drawerItem} disableTypography>
-              Free Estimate
-            </ListItemText>
-          </ListItem> */}
         </List>
       </SwipeableDrawer>
       <IconButton
@@ -434,22 +426,21 @@ export default function Header(props) {
 
   return (
     <>
-      <ElevationScroll>
-        <AppBar className={classes.appBar} position="fixed" color="primary">
-          <Toolbar disableGutters>
-            <Button
-              component={Link}
-              to="/"
-              disableRipple
-              className={classes.logoContainer}
-              onClick={() => setValue(0)}
-            >
-              <Typography className={classes.name}>Pawan Benjamin</Typography>
-            </Button>
-            {matches ? drawer : tabs}
-          </Toolbar>
-        </AppBar>
-      </ElevationScroll>
+      <AppBar className={classes.appBar} position="sticky" color="primary">
+        <Toolbar disableGutters>
+          <Button
+            component={Link}
+            to="/"
+            disableRipple
+            className={classes.logoContainer}
+            onClick={() => setValue(0)}
+          >
+            <Typography className={classes.logo}>Pawan Benjamin</Typography>
+          </Button>
+          {matches ? drawer : tabs}
+        </Toolbar>
+      </AppBar>
+
       <div className={classes.toolbarMargin} />
     </>
   );

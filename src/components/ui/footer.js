@@ -4,21 +4,12 @@ import Grid from "@material-ui/core/Grid";
 import { Link } from "react-router-dom";
 import Hidden from "@material-ui/core/Hidden";
 
-
-
 const useStyles = makeStyles((theme) => ({
   footer: {
-    backgroundColor: theme.palette.common.blue,
+    marginTop: "-5em",
+    scrollSnapAlign: "start",
+    backgroundColor: "transparent",
     width: "100%",
-    height: "5em",
-    [theme.breakpoints.down("sm")]: {
-      height: "5em",
-    },
-    [theme.breakpoints.down("xs")]: {
-      height: "5em",
-    },
-  },
-  footerLogo: {
     height: "5em",
     [theme.breakpoints.down("sm")]: {
       height: "5em",
@@ -37,15 +28,6 @@ const useStyles = makeStyles((theme) => ({
     opacity: ".7",
     textDecoration: "none",
     color: "black",
-  },
-  iconContainer: {
-    marginLeft: "2em",
-    marginTop: "1.5em",
-    opacity: ".5",
-    justifyContent: "flex-start",
-  },
-  icon: {
-    marginRight: "6px",
   },
 }));
 
