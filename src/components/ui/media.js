@@ -10,10 +10,10 @@ const useStyles = makeStyles((theme) => ({
   bigRow: {
     // backgroundColor: "#EFF9F0",
     // backgroundSize: "600px 800px",
-    height: "580px",
+    height: "100vh",
   },
   block1: {
-    marginTop: "16em",
+    marginTop: "20em",
     justifyContent: "space-evenly",
   },
 }));
@@ -24,6 +24,7 @@ const Media = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <Grid container className={classes.bigRow} justify="column">
       <Grid container>

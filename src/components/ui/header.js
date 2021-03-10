@@ -149,7 +149,7 @@ export default function Header(props) {
 
   const menuOptions = [
     { name: "Media", link: "/media" },
-    { name: "Photos", link: "/photos" },
+    { name: "Visual Art", link: "/visualart" },
     { name: "Videos", link: "/videos" },
     { name: "Audio", link: "/audio" },
   ];
@@ -188,7 +188,7 @@ export default function Header(props) {
           setSelectedIndex(0);
         }
         break;
-      case "/photos":
+      case "/visualart":
         if (value !== 4) {
           setValue(3);
           setSelectedIndex(1);
@@ -285,16 +285,6 @@ export default function Header(props) {
           label="Contact"
         />
       </Tabs>
-      {/* <Button
-        variant="contained"
-        color="secondary"
-        className={classes.button}
-        // component={Link}
-        // to="/estimate"
-        // onClick={() => setValue(5)}
-      >
-        Free Estimate
-      </Button> */}
       <Menu
         id="simple-menu"
         anchorEl={anchorEl}

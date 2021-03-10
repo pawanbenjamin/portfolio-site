@@ -6,12 +6,13 @@ import { makeStyles } from "@material-ui/core/styles";
 
 const useStyles = makeStyles((theme) => ({}));
 
-const Photos = () => {
+const VisualArt = () => {
   const classes = useStyles();
 
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <div className="container">
       <div className="item1"></div>
@@ -22,4 +23,4 @@ const Photos = () => {
   );
 };
 
-export default Photos;
+export default VisualArt;

@@ -99,7 +99,7 @@ export default function Footer(props) {
               </Grid>
               <Grid
                 component={Link}
-                to="/photos"
+                to="/visualart"
                 item
                 className={classes.link}
                 onClick={() => {
@@ -107,7 +107,7 @@ export default function Footer(props) {
                   setSelectedIndex(1);
                 }}
               >
-                Photos
+                Visual Art
               </Grid>
               <Grid
                 component={Link}

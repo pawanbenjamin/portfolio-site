@@ -12,8 +12,20 @@ import { motion } from "framer-motion";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
+import Grid from "@material-ui/core/Grid";
 
-const useStyles = makeStyles((theme) => ({}));
+const useStyles = makeStyles((theme) => ({
+  block1: {
+    display: "inline-block",
+    margin: "10em",
+    width: "35em",
+  },
+  button: {
+    marginTop: "3em",
+    margin: "2em",
+    borderRadius: "10em",
+  },
+}));
 
 const container = {
   hidden: {
@@ -63,6 +75,8 @@ const textVar = {
 };
 
 const Home = ({ setValue, setSelectedIndex }) => {
+  const classes = useStyles();
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
@@ -76,22 +90,39 @@ const Home = ({ setValue, setSelectedIndex }) => {
       exit="exit"
     >
       <div className="item1 home1">
-        <Typography variant="h2">Welcome to My Portfolio Page!</Typography>
-        <Button
-          variant="contained"
-          color="secondary"
-          component={Link}
-          to="/projects"
-          onClick={() => {
-            setValue(1);
-            setSelectedIndex(1);
-          }}
-        >
-          Technical Projects
-        </Button>
-        <Link to="/media">
-          <button>Music/Art</button>
-        </Link>
+        <div className={classes.block1}>
+          <Typography variant="h2">
+            Hi, I'm Pawan <br />
+            Software Engineer <br />
+            Musician & Educator
+          </Typography>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to="/projects"
+            onClick={() => {
+              setValue(1);
+              setSelectedIndex(1);
+            }}
+          >
+            Technical Projects
+          </Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to="/media"
+            onClick={() => {
+              setValue(3);
+              setSelectedIndex(3);
+            }}
+          >
+            Music / Art
+          </Button>
+        </div>
       </div>
       <div className="item2 home2"></div>
       <div className="item3 home3"></div>

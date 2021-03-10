@@ -31,7 +31,9 @@ function App() {
       />
       <AnimatePresence exitBeforeEnter>
         <Switch location={location} key={location.key}>
-          <Route exact path="/" component={Home} />
+          <Route exact path="/">
+            <Home setSelectedIndex={setSelectedIndex} setValue={setValue} />
+          </Route>
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
           <Route exact path="/photos" component={Photos} />
