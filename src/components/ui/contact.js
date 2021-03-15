@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typorgraphy from "@material-ui/core/Typography";
 import TextField from "@material-ui/core/TextField";
@@ -12,15 +12,10 @@ import twitter from "../../assets/twitter.svg";
 
 import linkedin from "../../assets/linkedin.svg";
 
+import withReggieBansuri from "../../assets/withReggieBansuri.jpg";
+
 const useStyles = makeStyles((theme) => ({
   title: {
-    marginTop: "2em",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    ...theme.typography.tab,
-  },
-  tit: {
     marginTop: "2em",
     display: "flex",
     flexDirection: "column",
@@ -54,74 +49,13 @@ const useStyles = makeStyles((theme) => ({
 const Contact = () => {
   const classes = useStyles();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <>
-      <Grid item className={classes.title}>
-        <Typorgraphy className={classes.tit} justify="center">
-          For inquiries, please contact pawanbenjamin@gmail.com <br />
-        </Typorgraphy>
-        <Typorgraphy className={classes.tit} justify="center">
-          Or follow me here:
-        </Typorgraphy>
-
-        <Grid
-          container
-          direction="row"
-          justify="center"
-          className={classes.iconContainer}
-        >
-          <Grid
-            item
-            component={"a"}
-            href={"https://www.linkedin.com/in/pawan-benjamin-6a87411b/"}
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <img src={linkedin}></img>
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href={"https://www.facebook.com/pawan.benjamin"}
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <img src={fbook}></img>
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href={"https://www.instagram.com/pawanbenjamin/?hl=en"}
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <img src={ig}></img>
-          </Grid>
-          <Grid
-            item
-            component={"a"}
-            href={"https://twitter.com/PawanBenjamin"}
-            rel="noopener noreferrer"
-            target="_blank"
-            className={classes.icon}
-          >
-            <img src={twitter}></img>
-          </Grid>
-        </Grid>
-
-        <Typorgraphy
-          className={classes.tit}
-          style={{
-            marginBottom: "6em",
-          }}
-        >
-          Thank you!
-        </Typorgraphy>
-      </Grid>
-    </>
+    <div className="container">
+      <div className="item1"></div>
+    </div>
   );
 };
 

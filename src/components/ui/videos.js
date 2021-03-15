@@ -1,72 +1,44 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Grid from "@material-ui/core/Grid";
 import Typography from "@material-ui/core/Typography";
 import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({}));
+import ReactPlayer from "react-player";
+
+const useStyles = makeStyles((theme) => ({
+  page1: {
+    marginTop: "4em",
+  },
+}));
 
 const Videos = () => {
   const classes = useStyles();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
-    <Grid container justify="column">
-      <Typography
-        style={{
-          alignItems: "center",
-        }}
-      >
-        Coming Soon!
-      </Typography>
-      {/* <Grid container>
-        <Grid container justify="row">
-          <Grid item>
-            <Typorgraphy>...1</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...2</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...3</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid container justify="row">
-          <Grid item>
-            <Typorgraphy>...4</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...5</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...6</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid container justify="row">
-          <Grid item>
-            <Typorgraphy>...7</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...8</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-          <Grid item>
-            <Typorgraphy>...9</Typorgraphy>
-            <img src={swirl}></img>
-          </Grid>
-        </Grid>
-      </Grid> */}
-    </Grid>
+    <div className="container">
+      <div className="item1">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=F-lMO7ShtOg"
+        />
+      </div>
+      <div className="item3">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=Xj_2uEAXLpc"
+        />
+      </div>
+      <div className="item4">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=ITeAOXxw_kE"
+        />
+      </div>
+    </div>
   );
 };
 
