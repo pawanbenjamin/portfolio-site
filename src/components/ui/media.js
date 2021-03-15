@@ -10,7 +10,7 @@ import BrushIcon from "@material-ui/icons/Brush";
 
 const useStyles = makeStyles((theme) => ({
   block1: {
-    marginTop: "8em",
+    marginTop: "15em",
     justifyContent: "center",
   },
   button: {

@@ -48,6 +48,7 @@ const useStyles = makeStyles((theme) => ({
     justifyContent: "space-around",
   },
   row: {
+    marginTop: "2em",
     textDecoration: "none",
     color: "black",
     marginRight: "2em",
@@ -77,11 +78,13 @@ const Projects = () => {
   const [projects, setProjects] = useState([
     {
       name: `Sita's Kitchen`,
-      description: `An e-commerce site where users can browse items (Nepali sauces), add to cart and checkout. \n Implemented RESTful API endpoints to create, edit, and delete items as an admin user `,
+      tech: `React, Redux, Sequelize, Express, Passport, Material-UI`,
+      description: `An e-commerce site where users can browse items (Nepali sauces), add to cart and checkout. \n Implemented RESTful API endpoints to create, edit, and delete items as an admin user. User passwords protected and session handling implemented with Passport, served with Express`,
       url: "https://github.com/pawanbenjamin/sitas-kitchen",
     },
     {
       name: `ByteDance Revolution`,
+      tech: `React, Firebase, TensorFlow, PoseNet`,
       description: `Used Tensorflow.js machine learning library and posenet to track user movements and calculate exact position scores. \n
         Used Firebase to store user data, media, authentication and deployment in an agile development environment
         `,
@@ -90,7 +93,8 @@ const Projects = () => {
     },
     {
       name: `React Synth`,
-      description: `A project that integrates React and the WebAudio Api's Oscillator nodes, which can be controlled with the user's keyboard.`,
+      tech: "React, WebAudio API",
+      description: `A project that integrates React and the WebAudio Api's Oscillator nodes, which can be controlled with the user's keyboard. A fun way to play with sound waves, maybe even along to your favorite song!`,
       url: "https://github.com/pawanbenjamin/react-synth",
     },
   ]);
@@ -111,7 +115,7 @@ const Projects = () => {
       <Grid container className={classes.bigRow} justify="row">
         <Typorgraphy variant="h2" className={classes.title}>
           Click on each <br />
-          Github Link <br /> to go to the <br />
+          Project <br /> to go to the <br />
           Source Code
         </Typorgraphy>
         <div className={classes.projectContainer} justify="column">
@@ -137,6 +141,9 @@ const Projects = () => {
                   </Grid>
                   <Typorgraphy className={classes.cardTitle}>
                     {project.name}
+                  </Typorgraphy>
+                  <Typorgraphy className={classes.cardTitle}>
+                    {project.tech}
                   </Typorgraphy>
                   <Typorgraphy className={classes.description}>
                     {project.description}

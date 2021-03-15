@@ -43,8 +43,7 @@ code {
 .about3 {
   display: flex;
   justify-content: center;
-  /* margin-left: -10em; */
-
+  background-image: url("./assets/soprano.jpg");
   height: 100vh;
   width: 100vw;
   scroll-snap-align: start;

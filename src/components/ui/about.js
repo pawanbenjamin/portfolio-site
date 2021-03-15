@@ -23,6 +23,9 @@ const useStyles = makeStyles((theme) => ({
     marginTop: "15em",
     marginLeft: "4em",
   },
+  aboutIntro: {
+    marginTop: "4em",
+  },
 }));
 
 const containerVariants = {
@@ -131,7 +134,15 @@ const About = () => {
           Blah Blah Blah Blah <br />
         </Typography>
       </div>
-      <div className="about3"></div>
+      <div className="about3">
+        <Typography
+          variant="h2"
+          className={classes.aboutIntro}
+          color="secondary"
+        >
+          Text
+        </Typography>
+      </div>
     </motion.div>
   );
 };

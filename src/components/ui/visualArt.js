@@ -15,7 +15,7 @@ const variants = {
       x: direction > 0 ? 1000 : -1000,
       opacity: 0,
       transition: {
-        duration: 2,
+        duration: 3,
       },
     };
   },
@@ -30,7 +30,7 @@ const variants = {
       x: direction < 0 ? 1000 : -1000,
       opacity: 0,
       transition: {
-        duration: 2,
+        duration: 3,
       },
     };
   },
@@ -65,8 +65,8 @@ const VisualArt = () => {
         animate="center"
         exit="exit"
         transition={{
-          x: { type: "spring", stiffness: 300, damping: 30 },
-          opacity: { duration: 1 },
+          x: { type: "spring", stiffness: 100, damping: 30 },
+          opacity: { duration: 3 },
         }}
         drag="x"
         dragConstraints={{ left: 0, right: 0 }}
