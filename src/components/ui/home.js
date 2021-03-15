@@ -1,7 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
-import Grid from "@material-ui/core/Grid";
-import Typorgraphy from "@material-ui/core/Typography";
+
 import PawanBnW from "../../assets/PawanBnW.jpg";
 import soprano from "../../assets/soprano.jpg";
 import swirl from "../../assets/swirl.svg";
@@ -9,126 +8,151 @@ import soloShen from "../../assets/soloShen.jpg";
 import Pawan37 from "../../assets/Pawan37.jpg";
 import Button from "@material-ui/core/Button";
 
+import BWLouie from "../../assets/BWLouie.jpeg";
+import parchement from "../../assets/parchment.jpg";
+
+import { motion } from "framer-motion";
+
 import { makeStyles } from "@material-ui/core/styles";
-import { findByLabelText } from "@testing-library/react";
+import Typography from "@material-ui/core/Typography";
+
 const useStyles = makeStyles((theme) => ({
-  bigRow: {
-    backgroundColor: "#EFF9F0",
-    // backgroundSize: "600px 800px",
-  },
   block1: {
-    marginTop: "4em",
-
-    [theme.breakpoints.down("md")]: {
-      marginTop: "2em",
-    },
-
-    justifyContent: "space-evenly",
+    marginTop: "10em",
+    alignItems: "left",
+    width: "35em",
   },
-  img: {
-    height: "500px",
-    borderRadius: "5px",
-    boxShadow: "0 3px 6px",
-    [theme.breakpoints.down("xs")]: {
-      height: "248px",
-    },
-  },
-  intro: {
-    marginLeft: "2em",
-    width: "20em",
-    marginBotton: "3em",
+  block2: {
+    alignItems: "left",
+    width: "25em",
   },
   button: {
-    marginTop: "2em",
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "2em",
+    marginTop: "3em",
+    margin: "2em",
+    borderRadius: "10em",
   },
-  mainImg: {},
-  title: {
-    marginTop: "2em",
-    ...theme.typography.tab,
-    display: "flex",
-    justifyContent: "center",
-    marginBottom: "2em",
+  photo: {
+    boxShadow: "10px 10px 5px #ccc",
+    marginTop: "10em",
+    marginRight: "3em",
+  },
+  column1: {
+    marginLeft: "8em",
+    marginTop: "12em",
+    marginRight: "3em",
   },
 }));
 
-const Home = () => {
+const container = {
+  hidden: {
+    opacity: 0,
+  },
+  visible: {
+    opacity: 1,
+    transition: {
+      duration: 2,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    transition: {
+      ease: "easeInOut",
+      duration: 2,
+    },
+  },
+};
+
+const imageVar = {
+  hidden: {
+    opacity: 0,
+    x: "100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 3,
+    },
+  },
+};
+
+const textVar = {
+  hidden: {
+    opacity: 0,
+    x: "-100vw",
+  },
+  visible: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      duration: 3,
+    },
+  },
+};
+
+const Home = ({ setValue, setSelectedIndex }) => {
   const classes = useStyles();
 
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
-    <Grid className={classes.bigRow} container justify="column">
-      <Grid container>
-        <Grid container className={classes.block1} justify="row">
-          <Grid item>
-            <Typorgraphy className={classes.title}>
-              Welcome to my portfolio Page!{" "}
-            </Typorgraphy>
-            <Typorgraphy className={classes.intro}>
-              Here you will find a directory to my engineering projects, as well
-              as links and media from my musical career. Thank you for stopping
-              by!
-            </Typorgraphy>
-            <Typorgraphy className={classes.title}>
-              Click below to view recent projects
-            </Typorgraphy>
-            <Grid className={classes.button} item>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/projects"
-              >
-                Technical Projects
-              </Button>
-            </Grid>
-            <Typorgraphy className={classes.title}>
-              Click here to listen to my music
-            </Typorgraphy>
-            <Grid item className={classes.button}>
-              <Button
-                variant="contained"
-                color="secondary"
-                component={Link}
-                to="/audio"
-              >
-                Music
-              </Button>
-            </Grid>
-          </Grid>
-          <Grid item>
-            <img src={Pawan37} className={classes.img}></img>
-            <Typorgraphy
-              style={{
-                fontSize: "12px",
-                marginTop: "1em",
-                textAlign: "center",
-              }}
-            >
-              At the UW Memorial Union Theatre Oct 2019
-            </Typorgraphy>
-          </Grid>
-        </Grid>
-      </Grid>
-      <Grid container>
-        <Grid container className={classes.block1} justify="row"></Grid>
-      </Grid>
-      <Grid container>
-        <Grid container className={classes.block1} justify="row">
-          <Grid item>
-            <Typorgraphy
-              style={{
-                marginTop: "8em",
-                marginBottom: "4em",
-              }}
-            >
-              Please check back for new projects!
-            </Typorgraphy>
-          </Grid>
-        </Grid>
-      </Grid>
-    </Grid>
+    <motion.div
+      className="container"
+      variants={container}
+      initial="hidden"
+      animate="visible"
+      exit="exit"
+    >
+      <div className="item1 home1">
+        <div className={classes.block1}>
+          <Typography variant="h2">
+            Hi, I'm Pawan. <br />
+            Software Engineer <br />
+            Musician & Educator
+          </Typography>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to="/projects"
+            onClick={() => {
+              setValue(1);
+              setSelectedIndex(1);
+            }}
+          >
+            Technical Projects
+          </Button>
+          <Button
+            className={classes.button}
+            variant="contained"
+            color="secondary"
+            component={Link}
+            to="/media"
+            onClick={() => {
+              setValue(3);
+              setSelectedIndex(3);
+            }}
+          >
+            Music / Art
+          </Button>
+        </div>
+        <div className={classes.block2}></div>
+      </div>
+      <div className="item2home">
+        <img style={{ marginLeft: "0" }} src={BWLouie} />
+        <div className={classes.column1}>
+          <Typography variant="h2">
+            I am a <br />
+            creativite mind <br />
+            with a passion for <br />
+            technology, sound, art and people.
+          </Typography>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
