@@ -4,7 +4,13 @@ import Typography from "@material-ui/core/Typography";
 import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles((theme) => ({}));
+import ReactPlayer from "react-player";
+
+const useStyles = makeStyles((theme) => ({
+  page1: {
+    marginTop: "4em",
+  },
+}));
 
 const Videos = () => {
   const classes = useStyles();
@@ -14,10 +20,24 @@ const Videos = () => {
   }, []);
   return (
     <div className="container">
-      <div className="item1"></div>
-      <div className="item2"></div>
-      <div className="item3"></div>
-      <div className="item4"></div>
+      <div className="item1">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=F-lMO7ShtOg"
+        />
+      </div>
+      <div className="item3">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=Xj_2uEAXLpc"
+        />
+      </div>
+      <div className="item4">
+        <ReactPlayer
+          controls
+          url="https://www.youtube.com/watch?v=ITeAOXxw_kE"
+        />
+      </div>
     </div>
   );
 };

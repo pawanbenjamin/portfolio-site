@@ -111,8 +111,8 @@ const Projects = () => {
       <Grid container className={classes.bigRow} justify="row">
         <Typorgraphy variant="h2" className={classes.title}>
           Click on each <br />
-          project to go to the <br />
-          Github Page!
+          Github Link <br /> to go to the <br />
+          Source Code
         </Typorgraphy>
         <div className={classes.projectContainer} justify="column">
           {projects.map((project) => (

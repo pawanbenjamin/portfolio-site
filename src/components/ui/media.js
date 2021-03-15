@@ -9,13 +9,8 @@ import Button from "@material-ui/core/Button";
 import BrushIcon from "@material-ui/icons/Brush";
 
 const useStyles = makeStyles((theme) => ({
-  bigRow: {
-    // backgroundColor: "#EFF9F0",
-    // backgroundSize: "600px 800px",
-    height: "100vh",
-  },
   block1: {
-    marginTop: "20em",
+    marginTop: "8em",
     justifyContent: "center",
   },
   button: {

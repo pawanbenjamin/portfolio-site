@@ -6,10 +6,14 @@ import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import redSax from "../../assets/redSax.jpg";
 
+import DescriptionIcon from "@material-ui/icons/Description";
+
 import ctrib from "../../assets/ColtraneTrib.jpeg";
 import wShyamDai from "../../assets/wShyamDai.jpg";
 import LinkIcon from "@material-ui/icons/Link";
 import Typography from "@material-ui/core/Typography";
+
+import Resume from "../../assets/Resume.pdf";
 
 const useStyles = makeStyles((theme) => ({
   engineerBlock: {
@@ -96,6 +100,9 @@ const About = () => {
           Blah Blah Blah Blah <br />
           Blah Blah Blah Blah <br />
           Blah Blah Blah Blah <br />
+          <a href={Resume} target="_blank">
+            Resume <DescriptionIcon />
+          </a>
         </Typography>
         <Typography className={classes.skillsBlock}>
           <Typography variant="h3">Skills:</Typography>

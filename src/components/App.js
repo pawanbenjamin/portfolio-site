@@ -5,7 +5,7 @@ import Header from "./ui/header";
 import Footer from "./ui/footer";
 import theme from "./ui/theme";
 
-import Photos from "./ui/photos";
+import VisualArt from "./ui/visualArt";
 import About from "./ui/about";
 import Audio from "./ui/audio";
 import Projects from "./ui/projects";
@@ -36,7 +36,7 @@ function App() {
           </Route>
           <Route exact path="/about" component={About} />
           <Route exact path="/projects" component={Projects} />
-          <Route exact path="/photos" component={Photos} />
+          <Route exact path="/visualart" component={VisualArt} />
           <Route exact path="/videos" component={Videos} />
           <Route exact path="/audio" component={Audio} />
           <Route exact path="/media" component={Media} />

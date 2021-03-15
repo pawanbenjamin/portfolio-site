@@ -15,7 +15,6 @@ import { motion } from "framer-motion";
 
 import { makeStyles } from "@material-ui/core/styles";
 import Typography from "@material-ui/core/Typography";
-import Grid from "@material-ui/core/Grid";
 
 const useStyles = makeStyles((theme) => ({
   block1: {
@@ -33,12 +32,13 @@ const useStyles = makeStyles((theme) => ({
     borderRadius: "10em",
   },
   photo: {
+    boxShadow: "10px 10px 5px #ccc",
     marginTop: "10em",
     marginRight: "3em",
   },
   column1: {
     marginLeft: "8em",
-    marginTop: "14em",
+    marginTop: "12em",
     marginRight: "3em",
   },
 }));
@@ -148,7 +148,7 @@ const Home = ({ setValue, setSelectedIndex }) => {
             I am a <br />
             creativite mind <br />
             with a passion for <br />
-            tehcnology, sound, art and people.
+            technology, sound, art and people.
           </Typography>
         </div>
       </div>
