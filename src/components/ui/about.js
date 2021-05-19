@@ -6,17 +6,17 @@ import swirl from "../../assets/swirl.svg";
 import { makeStyles } from "@material-ui/core/styles";
 import redSax from "../../assets/redSax.jpg";
 
+import techIcons from "../../assets/techIcons.png";
+
 import DescriptionIcon from "@material-ui/icons/Description";
 
-import ctrib from "../../assets/ColtraneTrib.jpeg";
-import wShyamDai from "../../assets/wShyamDai.jpg";
-import LinkIcon from "@material-ui/icons/Link";
 import Typography from "@material-ui/core/Typography";
 
 import Resume from "../../assets/Resume.pdf";
 
 const useStyles = makeStyles((theme) => ({
   engineerBlock: {
+    marginLeft: "15em",
     marginTop: "15em",
   },
   skillsBlock: {
@@ -25,6 +25,9 @@ const useStyles = makeStyles((theme) => ({
   },
   aboutIntro: {
     marginTop: "4em",
+  },
+  icon: {
+    height: "1000px",
   },
 }));
 
@@ -96,52 +99,41 @@ const About = () => {
       className="container"
     >
       <div className="about2">
-        <Typography className={classes.engineerBlock}>
-          <Typography variant="h3">As an Engineer</Typography>
-          Blah Blah Blah Blah
-          <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          <a href={Resume} target="_blank">
-            Resume <DescriptionIcon />
-          </a>
-        </Typography>
-        <Typography className={classes.skillsBlock}>
-          <Typography variant="h3">Skills:</Typography>
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-        </Typography>
+        <div>
+          <Typography variant="h1">As an Engineer</Typography>
+          <Typography>
+            I graduated in 2020 from Fullstack Academy, <br />
+            where I pushed myself to adapt to a challeneging enviroment, <br />
+            and pushmyself to new heights.
+          </Typography>
+        </div>
+        <div>
+          <Typography variant="h2">Skills include</Typography>
+          <Grid container>
+            <Grid item></Grid>
+          </Grid>
+        </div>
       </div>
       <div className="about1">
-        <Typography className={classes.engineerBlock}>
-          <Typography variant="h3">As a Musician</Typography>
-          Blah Blah Blah Blah
-          <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-        </Typography>
-        <Typography className={classes.skillsBlock}>
-          <Typography variant="h3">Awards and Honors Include:</Typography>
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-          Blah Blah Blah Blah <br />
-        </Typography>
-      </div>
-      <div className="about3">
-        <Typography
-          variant="h2"
-          className={classes.aboutIntro}
-          color="secondary"
-        >
-          Text
-        </Typography>
+        <div>
+          <Typography variant="h1">As an Engineer</Typography>
+          <Typography>
+            I graduated in 2020 from Fullstack Academy, <br />
+            where I pushed myself to adapt to a challeneging enviroment, <br />
+            and pushmyself to new heights.
+          </Typography>
+        </div>
+        <div>
+          <Typography>Skills include</Typography>
+          <Typography>
+            Javascript, HTML5, CSS,
+            <br /> Node.js, React, Redux, Webpack, <br /> Postgres, Firebase,
+            Sequelize
+          </Typography>
+          <div>
+            <img src={techIcons} style={{ height: "20em" }} />
+          </div>
+        </div>
       </div>
     </motion.div>
   );
